@@ -26,7 +26,7 @@ with open(path) as f:
 
 @print_result
 def f1(arg):
-    return list(unique(field(arg, 'job-name'), ignore_case=True))
+    return list(sorted(unique(field(arg, 'job-name'), ignore_case=True)))
 
 
 @print_result

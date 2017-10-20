@@ -16,7 +16,7 @@ goods2 = [
     {'title': 'Вешалка для одежды', 'price': 800, 'color': 'white'}
 ]
 
-for i in field(goods2, 'price'):
+for i in field(goods2, 'title', 'price'):
     print(i, end=', ')
 
 print()
