@@ -1,3 +1,22 @@
+
+def print_result(function_to_decorate):
+    def decorated_by_print_result(*args):
+        print(function_to_decorate.__name__)
+        returned_value = function_to_decorate(*args)
+        if isinstance(returned_value, list):
+            for i in returned_value:
+                print(i)
+        elif isinstance(returned_value, dict):
+            for key, value in returned_value.items():
+                print(key, ' = ', value)
+        else:
+            print(returned_value)
+        return returned_value
+    return decorated_by_print_result()
+
+
+
+
 # Здесь необходимо реализовать декоратор, print_result который принимает на вход функцию,
 # вызывает её, печатает в консоль имя функции, печатает результат и возвращает значение
 # Если функция вернула список (list), то значения должны выводиться в столбик
