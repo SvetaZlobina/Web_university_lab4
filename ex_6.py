@@ -28,9 +28,6 @@ with open(path) as f:
 def f1(arg):
     return list(unique(field(arg, 'job-name'), ignore_case=True))
 
-#obj_list = f1(data)
-#print(obj_list)
-
 
 @print_result
 def f2(arg):
@@ -44,8 +41,8 @@ def f3(arg):
 
 @print_result
 def f4(arg):
-    li = list(zip(arg, list(gen_random(100000, 200000, len(arg)))))
-    return list(map(lambda x: x[0] + ", зарплата " + str(x[1]) + " руб", li))
+    salary_list = list(zip(arg, list(gen_random(100000, 200000, len(arg)))))
+    return list(map(lambda x: x[0] + ", зарплата " + str(x[1]) + " руб", salary_list))
 
 with timer():
     f4(f3(f2(f1(data))))

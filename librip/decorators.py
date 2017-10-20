@@ -4,18 +4,13 @@ def print_result(function_to_decorate):
         print(function_to_decorate.__name__)
         returned_value = function_to_decorate(*args)
         if isinstance(returned_value, list):
-            for i in returned_value:
-                print(i)
+            print('\n'.join(map(str, returned_value)))
         elif isinstance(returned_value, dict):
-            for key, value in returned_value.items():
-                print(key, ' = ', value)
+            print('\n'.join(map(lambda k: str(k) + ' = ' + str(returned_value[k]), returned_value)))
         else:
             print(returned_value)
         return returned_value
-    return decorated_by_print_result()
-
-
-
+    return decorated_by_print_result
 
 # Здесь необходимо реализовать декоратор, print_result который принимает на вход функцию,
 # вызывает её, печатает в консоль имя функции, печатает результат и возвращает значение

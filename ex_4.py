@@ -3,27 +3,28 @@ from librip.decorators import print_result
 # Необходимо верно реализовать print_result
 # и задание будет выполнено
 
+
 @print_result
-def decor_test_1():
+def decor_test1():
     return 1
 
 
 @print_result
-def decor_test_2():
+def decor_test2():
     return 'iu'
 
 
 @print_result
-def decor_test_3():
+def decor_test3():
     return {'a': 1, 'b': 2}
 
 
 @print_result
-def decor_test_4():
+def decor_test4():
     return [1, 2]
 
 
-decor_test_1()
-decor_test_2()
-decor_test_3()
-decor_test_4()
+decor_test1()
+decor_test2()
+decor_test3()
+decor_test4()
